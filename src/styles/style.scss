@@ -1,0 +1,455 @@
+//Sass --watch style.scss:style.css
+@use 'menu';
+@use 'fonts';
+@use 'animations';
+@use 'trailer';
+@use 'locomotive';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.home-section {
+    min-height: 100vh;
+    overflow: hidden;
+
+    .home-section__title {
+        picture {
+            img {
+                width: 150px;
+                max-width: 150px;
+            }
+        }
+    }
+
+    .home-section__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Cormorant Garamond', serif;
+
+        .content--container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+
+            h2 {
+                font-size: 80px;
+                position: absolute;
+                top: -120px;
+                left: 40px;
+                z-index: 5;
+                opacity: 0;
+                transition: 1s;
+                transition-delay: 0.6s;
+            }
+
+            div {
+                overflow: hidden;
+                border-radius: 2%;
+
+                img {
+                    clip-path: inset(100% 0% 0% 0%);
+                    transition: 0.5s;
+                    width: 100%;
+                }
+            }
+
+            p {
+                position: absolute;
+                font-size: 30px;
+                bottom: -100px;
+                right: 0;
+                z-index: 5;
+            }
+        }
+    }
+}
+
+.about-section {
+    min-height: 100vh;
+    overflow: hidden;
+
+    .about-section__title {
+        margin-top: 20%;
+        margin-bottom: 10%;
+        width: 110%;
+        transform: rotateZ(-5deg);
+        opacity: 1;
+
+        h2 {
+            font-family: 'brown';
+            font-size: 80px;
+            width: 500vmax;
+            transform: translateX(-10px);
+            overflow: hidden;
+            opacity: 1;
+        }
+    }
+
+    .about-section__content {
+        .content-container {
+            p {
+                font-size: 30px;
+                width: 60%;
+                margin-inline: auto;
+                font-family: 'Cormorant Garamond', serif;
+            }
+
+            .lineParent {
+                overflow: hidden;
+            }
+
+            .lineChild {
+                opacity: 0;
+            }
+
+            .resumee-download {
+                margin-top: 8%;
+                background-color: black;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                margin-inline: auto;
+                position: relative;
+                animation: rotative 10s linear infinite;
+                cursor: pointer;
+
+                p {
+                    color: white;
+                    font-size: 25px;
+                    font-family: 'brown';
+                    position: absolute;
+                    left: 100px;
+                    top: -25px;
+                    opacity: 0.7;
+                    transition: 0.3s;
+
+                    span {
+                        display: inline-block;
+                        position: absolute;
+                        transform-origin: 0 100px;
+                    }
+                }
+
+                .fa-arrow-down {
+                    position: absolute;
+                    color: white;
+                    width: 50px;
+                    height: 50px;
+                    top: 75px;
+                    left: 75px;
+                    animation: rotativeArrow 10s linear reverse infinite;
+                    opacity: 0.7;
+                    transition: 0.3s;
+                    font-size: 60px;
+                }
+            }
+
+            .resumee-download:hover {
+
+                p,
+                .fa-arrow-down {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.work-section {
+    overflow: visible;
+
+    .work-section__title {
+        h1 {
+            font-size: 250px;
+            font-family: 'brown';
+            text-align: center;
+        }
+    }
+
+    .work-section__content {
+        @mixin projects() {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5%;
+            margin-inline: auto;
+
+            .img {
+                width: 500px;
+                height: 500px;
+                overflow: hidden;
+                border-radius: 10px;
+                display: grid;
+                place-items: center;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 100%;
+                    transition: 0.5s;
+                }
+
+                img:hover {
+                    transform: scale(1.1);
+                }
+
+                .circle {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.3);
+                    width: 15vw;
+                    height: 15vw;
+                    max-width: 80px;
+                    min-width: 20px;
+                    max-height: 80px;
+                    min-height: 20px;
+                    border-radius: 50%;
+                    backdrop-filter: blur(3px);
+                    transform: scale(0.8);
+                    transition: 0.3s;
+                }
+
+                .fa-plus {
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid transparent;
+                    font-size: 43px;
+                    transition: 0.3s;
+                    transform: scale(0.5);
+                }
+            }
+
+            .img:hover {
+                .fa-plus{
+                    transform: rotate(45deg) scale(0.5);
+                }
+
+            }
+        }
+
+       .content--container {
+            @include projects();
+        }
+    }
+}
+
+.talk-section {
+    height: auto;
+    .talk-section__title {
+        h2 {
+            font-family: 'brown';
+            font-size: 120px;
+            text-align: center;
+        }
+    }
+
+    .talk-section__content {
+        p {
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            width: 70%;
+            margin-inline: auto;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .content--container {
+            width: 80vmax;
+            height: 40vmax;
+            position: relative;
+            overflow: hidden;
+
+            .circle-container {
+                position: absolute;
+                background-color: black;
+                right: 20%;
+                border-radius: 50%;
+                width: 100vmax;
+                height: 100vmax;
+                transform: scale(0);
+                transition: 1s;
+
+                h3 {
+                    margin-top: 5%;
+                    font-size: 3vw;
+                    font-family: 'brown';
+                    transform: translateX(50vw);
+                    overflow: hidden;
+
+                    a {
+                        .letters {
+                            display: inline-block;
+                            transform: translateY(130%) rotate(20deg);
+                            transition: 0.6s;
+                            transition-delay: 1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*.lazy {
+    img,div,span{
+        display: none;
+    }
+}*/
+
+@media screen and (max-width:768px) {
+    .home-section {
+        height: auto;
+        min-height: 40dvh;
+        overflow: visible;
+
+        .home-section__title {
+            picture {
+                img {
+                    width: 20vw;
+                    max-width: 200px;
+                    min-width: 50px;
+                }
+            }
+        }
+
+        .home-section__content {
+            .content--container {
+                width: 70vw;
+                min-width: 150px;
+                max-width: 500px;
+                height: auto;
+
+                h2 {
+                    font-size: clamp(25px, 11vw, 80px);
+                    top: -16vw;
+                    left: 6vw;
+                }
+
+                p {
+                    font-size: clamp(10px, 4vw, 30px);
+                    top: 94%;
+                }
+            }
+        }
+    }
+
+    .about-section {
+        min-height: 100vh;
+
+        .about-section__title {
+            margin-bottom: 10%;
+
+            h2 {
+                font-size: 80px;
+            }
+        }
+
+        .about-section__content {
+            .content-container {
+                p {
+                    font-size: clamp(20px, 4vw, 30px);
+                    width: 85%;
+                    text-align: justify;
+                }
+
+                .resumee-download {
+                    animation: rotativeMobile 10s linear infinite;
+
+                    .fa-arrow-down {
+                        animation: rotativeMobile 10s linear reverse infinite;
+                    }
+                }
+            }
+        }
+    }
+
+    .work-section {
+        overflow: hidden;
+
+        .work-section__title {
+            h1 {
+                font-size: clamp(90px, 30vw, 250px);
+            }
+        }
+
+        .work-section__content {
+            @mixin projects() {
+                margin-bottom: 10%;
+
+                .img {
+                    width: 70vw;
+                    height: 70vw;
+                    max-width: 500px;
+                    min-width: 200px;
+                    max-height: 500px;
+                    min-height: 200px;
+                }
+
+                .fa-plus {
+                    width: 5vw;
+                    height: 5vw;
+                    border: 1px solid transparent;
+                    max-width: 40px;
+                    min-width: 10px;
+                    max-height: 40px;
+                    min-height: 10px;
+                    font-size: clamp(13px,5.3vw,43px);
+                }
+            }
+
+            #ProgramLanguage,
+            #PatitasACasa,
+            #CoursesApp {
+                @include projects();
+            }
+        }
+    }
+
+    .talk-section {
+        .talk-section__title {
+            h2 {
+                font-size: clamp(30px, 15vw, 100px);
+                overflow: hidden;
+            }
+        }
+
+        .talk-section__content {
+            p {
+                font-size: clamp(10px, 4vw, 30px);
+                width: 70%;
+            }
+
+            .content--container {
+                .circle-container {
+                    background-color: black;
+                    right: 20%;
+                    width: 100vmax;
+                    height: 100vmax;
+
+                    h3 {
+                        margin-top: 5%;
+                        font-size: clamp(20px, 4vw, 50px);
+                        transform: translateX(50vmax);
+                    }
+                }
+            }
+        }
+    }
+}

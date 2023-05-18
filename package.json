@@ -1,0 +1,43 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "Juan David Moreno Alfonso's portafolio",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "portafolioV6"
+  },
+  "keywords": [
+    "Portafolio",
+    "Juan",
+    "Daivid",
+    "He",
+    "is",
+    "JuanDa"
+  ],
+  "author": "Juan David Moreno Alfonso (He Is JuanDa)",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^5.0.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "style-loader": "^3.3.2",
+    "terser-webpack-plugin": "^5.3.8",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  },
+  "dependencies": {
+    "gsap": "^3.11.5",
+    "locomotive-scroll": "^4.1.4"
+  }
+}

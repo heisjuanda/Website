@@ -1,0 +1,40 @@
+//trailer mouse
+body:hover>#trailer {
+    opacity: 1;
+}
+
+#trailer {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.24);
+    border-radius: 100px;
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+
+    display: grid;
+    place-items: center;
+    mix-blend-mode: difference;
+    backdrop-filter: blur(5px);
+}
+
+#trailer:not([data-type=""])>#trailer-icon {
+    opacity: 1;
+}
+
+#trailer-icon {
+    line-height: 4px;
+    font-size: 40px;
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.fa-arrow-up,.fa-chevron-up{
+    transform: rotate(30deg);
+}
