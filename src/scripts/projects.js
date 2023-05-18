@@ -9,8 +9,6 @@ class Project {
         this.project.setAttribute('data-scroll', '');
         this.project.setAttribute('data-scroll-speed', `${movement}`);
         this.project.setAttribute('data-scroll-direction', 'horizontal');
-        //this.project.setAttribute('data-scroll-sticky', '');
-        //this.project.setAttribute('data-scroll-target', '.work-section__content');
         this.project.innerHTML = `
         <div class="img interactable" data-type='project'>
             <a target='_blank' href=${pageUrl}>
