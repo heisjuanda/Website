@@ -16,6 +16,7 @@
 - Webpack Version 5.75.0
 - Gsap Version 3.11.5
 - Locomotive Scroll Version 4.1.4
+- Netlify Version 11.8.3
 
 ## PageSpeed Insigths
 [Report](https://pagespeed.web.dev/analysis/https-heisjuanda-netlify-app/i9q3zxfn3f?form_factor=mobile)
